@@ -1,0 +1,54 @@
+[
+  {
+    "id": "blog-001",
+    "slug": "how-often-should-you-visit-dentist",
+    "title": "How Often Should You Visit the Dentist?",
+    "excerpt": "A simple guide to routine dental checkups, cleanings, and when tooth pain needs faster attention.",
+    "content": "Most patients benefit from a dental checkup every six months. Routine visits help detect cavities, gum inflammation, tartar buildup, and bite concerns before they become painful or expensive.\n\nIf you have tooth sensitivity, bleeding gums, swelling, persistent pain, or a broken tooth, do not wait for a routine appointment. Book a visit so the dentist can examine the area and explain the right treatment plan.\n\nAt Healthy Grins Dental Clinic, the goal is to make every visit clear, comfortable, and focused on prevention.",
+    "author": "Dr. Lisha",
+    "category": "Preventive Care",
+    "coverImage": "",
+    "published": true,
+    "createdAt": "2026-07-18T00:00:00.000Z",
+    "updatedAt": "2026-07-18T00:00:00.000Z"
+  },
+  {
+    "id": "blog-002",
+    "slug": "root-canal-pain-myths-and-facts",
+    "title": "Root Canal Treatment: Pain Myths, Recovery, and When It Saves a Tooth",
+    "excerpt": "Understand why root canal treatment is recommended, what patients feel during care, and how recovery usually works.",
+    "content": "Root canal treatment is suggested when the inner portion of a tooth becomes infected or inflamed. This can happen because of deep decay, repeated dental procedures, cracks, trauma, or untreated cavities.\n\nThe purpose of treatment is to clean the infected portion, disinfect the canal, seal the tooth, and preserve the natural tooth whenever possible. Many patients expect root canal treatment to be painful, but modern anesthesia and careful technique are designed to make the procedure comfortable.\n\nAfter treatment, mild tenderness can happen for a short time. The dentist may recommend a crown when the tooth needs long-term strength for chewing.",
+    "author": "Dr. Lisha",
+    "category": "Root Canal",
+    "coverImage": "",
+    "published": true,
+    "createdAt": "2026-07-17T00:00:00.000Z",
+    "updatedAt": "2026-07-17T00:00:00.000Z"
+  },
+  {
+    "id": "blog-003",
+    "slug": "teeth-whitening-safe-expectations",
+    "title": "Is Teeth Whitening Safe? What Patients Should Know First",
+    "excerpt": "A dentist-led explanation of whitening safety, sensitivity risk, realistic shade changes, and after-care.",
+    "content": "Teeth whitening can be safe when it is planned after a dental checkup. The dentist first checks for cavities, gum inflammation, exposed roots, restorations, and sensitivity risk.\n\nWhitening works best on natural enamel stains. It may not change the shade of crowns, bridges, veneers, or old fillings. Patients should understand this before expecting a uniform shade change.\n\nTemporary sensitivity can happen. Following dentist instructions, avoiding overuse, and maintaining oral hygiene can help keep the result comfortable and natural-looking.",
+    "author": "Dr. Lisha",
+    "category": "Cosmetic Dentistry",
+    "coverImage": "",
+    "published": true,
+    "createdAt": "2026-07-16T00:00:00.000Z",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "blog-004",
+    "slug": "child-first-dental-visit",
+    "title": "Your Child's First Dental Visit: How to Make It Calm and Positive",
+    "excerpt": "Practical guidance for parents preparing children for a gentle first dental appointment.",
+    "content": "A child's first dental visit should feel calm, friendly, and simple. Parents can help by explaining that the dentist counts teeth, checks brushing, and helps keep the smile healthy.\n\nAvoid using words that make the visit sound frightening. The dentist may check teeth, gums, bite, habits, cavities, and brushing technique. Parents can ask about fluoride, diet, thumb sucking, mouth breathing, and cavity prevention.\n\nEarly visits help children become comfortable with dental care and help parents catch small concerns before they become painful.",
+    "author": "Dr. Lisha",
+    "category": "Pediatric Dentistry",
+    "coverImage": "",
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,198 @@
+{
+  "hero": {
+    "location": "Krishna Nagar, East Delhi",
+    "title": "Dental care that feels clear, calm, and personal.",
+    "copy": "Healthy Grins helps families understand their treatment options before starting care, from routine cleaning to root canal treatment and smile restoration.",
+    "primaryCta": "Book on WhatsApp",
+    "secondaryCta": "Call +91 9821127942",
+    "facts": [
+      {
+        "label": "Doctor",
+        "value": "Dr. Lisha, BDS"
+      },
+      {
+        "label": "Hours",
+        "value": "Mon-Sat, 10-2 and 5-8"
+      },
+      {
+        "label": "Sunday",
+        "value": "By appointment"
+      }
+    ]
+  },
+  "intro": {
+    "kicker": "What patients need first",
+    "title": "Understand the problem. Choose the right care. Leave with a plan.",
+    "copy": "Tell us what you are feeling, meet the doctor, review the recommended care, and decide with clarity."
+  },
+  "trustItems": [
+    {
+      "title": "Same-day guidance",
+      "text": "Share your concern and get help choosing the right appointment."
+    },
+    {
+      "title": "Hygiene-first care",
+      "text": "Sterilization and cross-contamination protocols are part of every visit."
+    },
+    {
+      "title": "Easy payments",
+      "text": "UPI and cash accepted at the clinic."
+    }
+  ],
+  "concerns": [
+    {
+      "icon": "!",
+      "title": "Tooth pain or sensitivity",
+      "text": "Get an examination for cavities, infection, gum issues, or a tooth that may need root canal treatment."
+    },
+    {
+      "icon": "*",
+      "title": "Cleaning or stains",
+      "text": "Remove plaque, tartar, and surface stains with dental cleaning, polishing, and whitening advice."
+    },
+    {
+      "icon": "+",
+      "title": "Broken or missing teeth",
+      "text": "Restore chewing and appearance with fillings, crowns, bridges, or dentures based on the tooth condition."
+    },
+    {
+      "icon": "K",
+      "title": "Child dental visit",
+      "text": "Plan hygiene, cavity care, habit guidance, fluoride support, and a gentler first dental experience."
+    }
+  ],
+  "treatments": [
+    {
+      "slug": "dental-cleaning-polishing",
+      "title": "Dental Cleaning & Polishing",
+      "description": "Removes plaque, tartar, and surface stains to support gum health and fresher breath.",
+      "goodFor": "Routine checkups, stains, bleeding gums",
+      "details": "The doctor checks your gums and teeth, removes buildup with dental instruments, and polishes the tooth surfaces. Regular cleaning can reduce gum irritation and make daily brushing more effective."
+    },
+    {
+      "slug": "root-canal-treatment",
+      "title": "Root Canal Treatment",
+      "description": "Cleans and seals an infected tooth so the natural tooth can often be saved.",
+      "goodFor": "Deep decay, severe pain, infected pulp",
+      "details": "After examination and X-ray guidance when needed, the infected inner portion of the tooth is cleaned, shaped, disinfected, and sealed. A crown may be recommended afterward for long-term strength."
+    },
+    {
+      "slug": "dental-fillings",
+      "title": "Dental Fillings",
+      "description": "Repairs a decayed or damaged area with a suitable restorative material.",
+      "goodFor": "Small cavities, chipped areas, early decay",
+      "details": "The affected area is cleaned and restored with tooth-colored or suitable filling material. Early fillings can help prevent decay from becoming deeper and more painful."
+    },
+    {
+      "slug": "crowns-bridges",
+      "title": "Crowns & Bridges",
+      "description": "Protects weak teeth and replaces missing teeth to restore bite strength and smile balance.",
+      "goodFor": "Post-root-canal teeth, damaged teeth, missing teeth",
+      "details": "A crown covers and protects a weak tooth. A bridge uses neighboring support to replace a missing tooth. The doctor explains material choices, appointments, and care instructions."
+    },
+    {
+      "slug": "tooth-extraction",
+      "title": "Tooth Extraction",
+      "description": "Removes teeth that cannot be restored or may affect surrounding oral health.",
+      "goodFor": "Badly damaged teeth, non-restorable teeth",
+      "details": "Extraction is recommended only after assessing whether the tooth can be saved. The visit includes local anesthesia, careful removal, and after-care guidance for healing."
+    },
+    {
+      "slug": "teeth-whitening",
+      "title": "Teeth Whitening",
+      "description": "Brightens teeth by reducing stains and discoloration under dental supervision.",
+      "goodFor": "Dull smile, stains, special occasions",
+      "details": "The doctor first checks for cavities, gum concerns, and sensitivity risk. Whitening options and expectations are explained so the result looks natural and comfortable."
+    },
+    {
+      "slug": "childrens-dentistry",
+      "title": "Children's Dentistry",
+      "description": "Supports child hygiene, cavity care, brushing habits, fluoride guidance, and milk-tooth concerns.",
+      "goodFor": "Kids, first visits, cavities, habit guidance",
+      "details": "Children are guided gently through checkups and preventive care. Parents receive practical advice on brushing, diet, habits, and when a tooth needs treatment."
+    },
+    {
+      "slug": "dentures",
+      "title": "Dentures",
+      "description": "Replaces missing teeth with removable or fixed options for better chewing, speech, and appearance.",
+      "goodFor": "Partial or complete tooth loss",
+      "details": "The clinic reviews your gums, remaining teeth, bite, and comfort needs before suggesting partial or complete denture options and follow-up adjustments."
+    }
+  ],
+  "doctor": {
+    "name": "Dr. Lisha, BDS",
+    "bio": "Dr. Lisha completed her Bachelor of Dental Surgery from Sudha Rustagi Dental College, Faridabad, and has over 6 years of experience providing dental care and aesthetic treatments.",
+    "note": "The clinic focuses on minimally painful procedures, clear treatment planning, and a reassuring patient experience.",
+    "stats": [
+      {
+        "value": "6+ years",
+        "label": "Dental care experience"
+      },
+      {
+        "value": "BDS",
+        "label": "Dental Surgeon"
+      },
+      {
+        "value": "East Delhi",
+        "label": "Krishna Nagar clinic"
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "name": "Manohar Lal",
+      "quote": "I had a very smooth procedure. Dr. Lisha made me feel comfortable and gave genuine care with the best advice possible."
+    },
+    {
+      "name": "Healthy Grins patient",
+      "quote": "The explanation was simple and the appointment felt calm. I understood what treatment was needed and why."
+    },
+    {
+      "name": "Family dental visit",
+      "quote": "Good experience for a child dental visit. The doctor was patient and explained brushing care clearly."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How often should I visit the dentist?",
+      "answer": "Most people should book a routine dental checkup every 6 months. If you have active dental issues, the doctor may recommend more frequent visits."
+    },
+    {
+      "question": "Is professional teeth whitening safe?",
+      "answer": "Yes, when performed under dental supervision. The doctor checks your oral health first and explains sensitivity care."
+    },
+    {
+      "question": "Can I walk in?",
+      "answer": "Appointments are recommended so waiting time is lower and the doctor can plan enough time for your concern."
+    },
+    {
+      "question": "What happens during the first visit?",
+      "answer": "Your medical and dental history are reviewed, followed by an oral examination. X-rays may be suggested if needed for diagnosis."
+    },
+    {
+      "question": "What payment modes are available?",
+      "answer": "You can pay by UPI apps such as Google Pay or PhonePe, or by cash at the clinic."
+    }
+  ],
+  "gallery": [
+    "Clinic consultation",
+    "Cleaning and polishing",
+    "Smile restoration",
+    "Child dental visit",
+    "Root canal care",
+    "Whitening guidance"
+  ],
+  "contact": {
+    "title": "Book a visit at Healthy Grins Dental Clinic.",
+    "addressLines": [
+      "F-15/10 Shop No. 6",
+      "Lala Hans Raj Mahajan Road",
+      "Krishna Nagar, Delhi-110051"
+    ],
+    "phone": "+91 9821127942",
+    "phoneHref": "+919821127942",
+    "email": "healthygrinsbylisha@gmail.com",
+    "hours": "Mon-Sat 10am-2pm, 5pm-8pm; Sunday by appointment",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Healthy%20Grins%20Dental%20Clinic%20Krishna%20Nagar%20Delhi"
+  }
+}

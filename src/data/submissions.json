@@ -1,0 +1,23 @@
+{
+  "appointments": [
+    {
+      "name": "jagmeet",
+      "phone": "7045892896",
+      "concern": "Cleaning and polishing",
+      "message": "bvhvf",
+      "preferredTime": "monday morning",
+      "id": "33cbdade-a30b-437d-b9d0-8735b7f15ad3",
+      "createdAt": "2026-07-18T10:06:08.251Z"
+    },
+    {
+      "name": "jagmeet",
+      "phone": "7045892896",
+      "concern": "Tooth pain or sensitivity",
+      "message": "ceqg",
+      "preferredTime": "monday morning",
+      "id": "6d763b9c-f840-43db-8644-33643726f1fa",
+      "createdAt": "2026-07-18T09:54:32.251Z"
+    }
+  ],
+  "contacts": []
+}

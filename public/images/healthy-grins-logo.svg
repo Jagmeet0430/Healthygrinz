@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 170" role="img" aria-labelledby="title desc">
+  <title id="title">Healthy Grins logo</title>
+  <desc id="desc">Large HG letters with Healthy Grins text across the center.</desc>
+  <rect width="540" height="170" fill="none"/>
+  <g fill="#2F2A5A">
+    <text
+      x="82"
+      y="125"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="125"
+      font-weight="500"
+      letter-spacing="-9"
+    >HG</text>
+    <text
+      x="101"
+      y="86"
+      font-family="Inter, Arial, sans-serif"
+      font-size="22"
+      font-weight="900"
+      letter-spacing="14"
+    >HEALTHY GRINS</text>
+  </g>
+</svg>
