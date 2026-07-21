@@ -87,11 +87,11 @@ export default function MissionVision() {
             </div>
 
             <h3>
-              Becoming Delhi's Trusted Smile Destination
+               Becoming Delhi&apos;s Trusted Smile Destination
             </h3>
 
             <p>
-              To become one of India's most trusted modern dental clinics by
+              To become one of India&apos;s most trusted modern dental clinics by
               combining innovation, expertise and compassionate care with
               world-class treatment standards.
             </p>
