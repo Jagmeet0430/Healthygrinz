@@ -75,9 +75,9 @@ export default function DoctorProfile() {
               <h3>Our Philosophy</h3>
 
               <p>
-                "Every smile tells a story. Our mission is to make
+                {"Every smile tells a story. Our mission is to make
                 that story healthier, brighter and more confident
-                through modern dentistry and genuine care."
+                through modern dentistry and genuine care."}
               </p>
 
             </div>
