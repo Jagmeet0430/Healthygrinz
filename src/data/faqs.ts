@@ -1,26 +1,17 @@
 export const faqs = [
   {
-    question: "How often should I visit the dentist?",
+    question: "Do I need an appointment before visiting?",
     answer:
-      "Most people should book a routine dental checkup every 6 months. If you have active dental issues, the doctor may recommend more frequent visits.",
+      "Appointments are recommended to reduce waiting time, but walk-in patients are also welcome.",
   },
   {
-    question: "Is professional teeth whitening safe?",
+    question: "Do you provide emergency dental treatment?",
     answer:
-      "Yes, when performed under dental supervision. The doctor checks your oral health first and explains sensitivity care.",
+      "Yes, we provide emergency dental care for severe pain, broken teeth and dental injuries.",
   },
   {
-    question: "Can I walk in?",
+    question: "What payment methods do you accept?",
     answer:
-      "Appointments are recommended so waiting time is lower and the doctor can plan enough time for your concern.",
-  },
-  {
-    question: "What happens during the first visit?",
-    answer:
-      "Your medical and dental history are reviewed, followed by an oral examination. X-rays may be suggested if needed for diagnosis.",
-  },
-  {
-    question: "What payment modes are available?",
-    answer: "You can pay by UPI apps such as Google Pay or PhonePe, or by cash at the clinic.",
+      "We accept cash, UPI, debit cards, credit cards and other digital payment methods.",
   },
 ];

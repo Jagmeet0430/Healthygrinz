@@ -3,10 +3,15 @@ import { Header } from "@/components/layout/Header";
 import { MobileBottomBar } from "@/components/layout/MobileBottomBar";
 import { AIWidget } from "@/components/ai/AIWidget";
 import { getSiteContent } from "@/lib/content";
-
+import "@/styles/globals.css";
+import "@/styles/about.css";
 export const dynamic = "force-dynamic";
 
-export default async function CustomerLayout({ children }: { children: React.ReactNode }) {
+export default async function CustomerLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const content = await getSiteContent();
 
   return (
@@ -14,10 +19,15 @@ export default async function CustomerLayout({ children }: { children: React.Rea
       <a className="skip-link" href="#main">
         Skip to content
       </a>
+
       <Header contact={content.contact} />
+
       <main id="main">{children}</main>
+
       <Footer />
+
       <AIWidget />
+
       <MobileBottomBar contact={content.contact} />
     </>
   );

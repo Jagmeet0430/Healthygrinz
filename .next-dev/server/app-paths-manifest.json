@@ -1,10 +1,9 @@
 {
-  "/api/admin/submissions/route": "app/api/admin/submissions/route.js",
-  "/api/admin/content/route": "app/api/admin/content/route.js",
-  "/api/admin/blogs/route": "app/api/admin/blogs/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/(customer)/page": "app/(customer)/page.js",
+  "/(customer)/about/page": "app/(customer)/about/page.js",
+  "/(customer)/contact/page": "app/(customer)/contact/page.js",
   "/(customer)/blog/page": "app/(customer)/blog/page.js",
-  "/admin/page": "app/admin/page.js",
   "/(customer)/booking/page": "app/(customer)/booking/page.js",
-  "/(customer)/about/page": "app/(customer)/about/page.js"
+  "/(customer)/blog/[slug]/page": "app/(customer)/blog/[slug]/page.js"
 }

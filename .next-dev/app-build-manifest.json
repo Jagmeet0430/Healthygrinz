@@ -9,12 +9,23 @@
     "/(customer)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/(customer)/layout.css",
       "static/chunks/app/(customer)/layout.js"
     ],
     "/(customer)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(customer)/page.js"
+    ],
+    "/(customer)/about/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(customer)/about/page.js"
+    ],
+    "/(customer)/contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(customer)/contact/page.js"
     ],
     "/(customer)/booking/page": [
       "static/chunks/webpack.js",
@@ -26,40 +37,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(customer)/blog/page.js"
     ],
-    "/admin/layout": [
+    "/(customer)/blog/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/layout.js"
-    ],
-    "/admin/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/page.js"
-    ],
-    "/api/admin/content/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/admin/content/route.js"
-    ],
-    "/api/admin/submissions/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/admin/submissions/route.js"
-    ],
-    "/api/admin/blogs/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/admin/blogs/route.js"
-    ],
-    "/(customer)/about/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(customer)/about/page.js"
-    ],
-    "/api/ai/chat/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/ai/chat/route.js"
+      "static/chunks/app/(customer)/blog/[slug]/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

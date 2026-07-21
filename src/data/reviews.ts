@@ -1,17 +1,14 @@
 export const reviews = [
   {
-    name: "Manohar Lal",
-    quote:
-      "I had a very smooth procedure. Dr. Lisha made me feel comfortable and gave genuine care with the best advice possible.",
+    name: "Rahul Sharma",
+    location: "Jalandhar",
+    review:
+      "The doctors were extremely professional and friendly. My treatment was completely painless.",
   },
   {
-    name: "Healthy Grins patient",
-    quote:
-      "The explanation was simple and the appointment felt calm. I understood what treatment was needed and why.",
-  },
-  {
-    name: "Family dental visit",
-    quote:
-      "Good experience for a child dental visit. The doctor was patient and explained brushing care clearly.",
+    name: "Priya Verma",
+    location: "Ludhiana",
+    review:
+      "The clinic is clean, modern and the entire team made me feel comfortable.",
   },
 ];
