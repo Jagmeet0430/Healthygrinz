@@ -40,15 +40,6 @@ export default async function HomePage() {
             </a>
           </div>
         </div>
-        <div className="clinic-hero-visual">
-          <Image
-            src="/images/healthy-grins-hero-hd.png"
-            alt="A bright healthy smile"
-            fill
-            priority
-            sizes="(max-width: 900px) 100vw, 52vw"
-          />
-        </div>
       </section>
 
       <section className="clinic-services" id="services" aria-labelledby="services-title">
