@@ -1090,13 +1090,33 @@ function ReportsSection() {
 function AiAssistantSection() {
   const [prompt, setPrompt] = useState("Summarize today's schedule");
   const [answer, setAnswer] = useState("Ask a question to generate an operational summary for the clinic team.");
+  const [loading, setLoading] = useState(false);
 
-  function ask() {
+  async function ask() {
     const cleanPrompt = prompt.trim();
     if (!cleanPrompt) return;
-    setAnswer(
-      `AI draft for "${cleanPrompt}": Prioritize scheduled pain cases, confirm pending payments before treatment, and send WhatsApp reminders for evening appointments. Dentist verification is required for clinical advice.`,
-    );
+
+    setLoading(true);
+    setAnswer("Generating a live AI response...");
+
+    try {
+      const response = await fetch("/api/ai/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: cleanPrompt }),
+      });
+      const data = (await response.json()) as { answer?: string; error?: string };
+
+      if (!response.ok) {
+        throw new Error(data.error || "Unable to generate an AI response.");
+      }
+
+      setAnswer(data.answer || "The AI response was empty. Please try again.");
+    } catch (error) {
+      setAnswer(error instanceof Error ? error.message : "The assistant is temporarily unavailable.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -1111,7 +1131,9 @@ function AiAssistantSection() {
         </div>
         <div className="adm-ai-input">
           <input value={prompt} onChange={(event) => setPrompt(event.target.value)} aria-label="AI prompt" />
-          <button type="button" onClick={ask}>Ask</button>
+          <button type="button" onClick={() => void ask()} disabled={loading}>
+            {loading ? "Thinking..." : "Ask"}
+          </button>
         </div>
         <div className="adm-chip-row">
           {aiSuggestions.map((suggestion) => (

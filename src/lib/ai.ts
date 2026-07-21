@@ -19,7 +19,7 @@ type OpenAIResponse = {
 };
 
 export function getAiModel() {
-  return process.env.OPENAI_MODEL || "gpt-5.4-mini";
+  return process.env.OPENAI_MODEL || "gpt-5";
 }
 
 export function hasOpenAIKey() {
@@ -84,4 +84,3 @@ export async function createOpenAIResponse(body: Record<string, unknown>) {
 
   return text;
 }
-
