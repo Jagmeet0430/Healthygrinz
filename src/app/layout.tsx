@@ -8,12 +8,18 @@ export const metadata: Metadata = {
   },
   description:
     "Healthy Grins Dental Clinic in Krishna Nagar, East Delhi offers dental cleaning, root canal treatment, crowns, bridges, fillings, dentures, whitening, and children's dentistry.",
+  formatDetection: {
+    telephone: false,
+    date: false,
+    address: false,
+    email: false,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Message = {
   role: "assistant" | "user";
@@ -35,14 +35,11 @@ export function AIWidget() {
   ]);
   const [loading, setLoading] = useState(false);
   const [listening, setListening] = useState(false);
+  const [speechSupported, setSpeechSupported] = useState(false);
   const recognitionRef = useRef<InstanceType<SpeechRecognitionConstructor> | null>(null);
 
-  const speechSupported = useMemo(
-    () => typeof window !== "undefined" && Boolean(window.SpeechRecognition || window.webkitSpeechRecognition),
-    [],
-  );
-
   useEffect(() => {
+    setSpeechSupported(Boolean(window.SpeechRecognition || window.webkitSpeechRecognition));
     return () => recognitionRef.current?.stop();
   }, []);
 

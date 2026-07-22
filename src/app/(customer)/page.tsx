@@ -40,6 +40,16 @@ export default async function HomePage() {
             </a>
           </div>
         </div>
+        <div className="clinic-hero-image">
+          <Image
+            src="/images/healthy-grins-hero-hd.png"
+            alt="Healthy Grins dental clinic"
+            fill
+            priority
+            sizes="100vw"
+            className="hero-photo"
+          />
+        </div>
       </section>
 
       <section className="clinic-services" id="services" aria-labelledby="services-title">
