@@ -22,26 +22,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(customer)/about/page.js"
     ],
-    "/(customer)/contact/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(customer)/contact/page.js"
-    ],
-    "/(customer)/booking/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(customer)/booking/page.js"
-    ],
-    "/(customer)/blog/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(customer)/blog/page.js"
-    ],
-    "/(customer)/blog/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(customer)/blog/[slug]/page.js"
-    ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

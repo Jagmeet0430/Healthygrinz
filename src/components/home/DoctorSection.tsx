@@ -14,8 +14,8 @@ export default function DoctorProfile() {
             <Image
               src="/images/about/doctor.jpg"
               alt="Dr. Lisha"
-              width={300}
-              height={300}
+              width={500}
+              height={650}
               className="doctor-photo"
             />
 

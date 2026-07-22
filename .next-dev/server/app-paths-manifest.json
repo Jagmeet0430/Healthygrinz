@@ -1,9 +1,5 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/(customer)/page": "app/(customer)/page.js",
-  "/(customer)/about/page": "app/(customer)/about/page.js",
-  "/(customer)/contact/page": "app/(customer)/contact/page.js",
-  "/(customer)/blog/page": "app/(customer)/blog/page.js",
-  "/(customer)/booking/page": "app/(customer)/booking/page.js",
-  "/(customer)/blog/[slug]/page": "app/(customer)/blog/[slug]/page.js"
+  "/(customer)/about/page": "app/(customer)/about/page.js"
 }
