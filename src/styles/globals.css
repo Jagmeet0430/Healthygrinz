@@ -4471,7 +4471,13 @@ address {
   font-size: clamp(1.2rem, 2vw, 1.55rem);
 }
 
+.clinic-testimonial-slide {
+  animation: clinic-testimonial-in 520ms ease both;
+}
+
 .clinic-testimonial-card cite {
+  display: block;
+  margin-top: 1.2rem;
   color: #556070;
 }
 
@@ -4481,17 +4487,41 @@ address {
   margin-top: 1.3rem;
 }
 
-.clinic-dots span {
+.clinic-dots button {
   width: 9px;
   height: 9px;
+  padding: 0;
+  border: 0;
   border-radius: 50%;
   background: rgba(46, 38, 78, 0.24);
+  cursor: pointer;
+  transition: width 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
-.clinic-dots .is-active {
+.clinic-dots button:hover,
+.clinic-dots button:focus-visible {
+  background: #2E264E;
+  outline: 0;
+  transform: translateY(-1px);
+}
+
+.clinic-dots .is-active,
+.clinic-dots button[aria-current="true"] {
   width: 26px;
   border-radius: 999px;
   background: #2E264E;
+}
+
+@keyframes clinic-testimonial-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .clinic-map {
@@ -6084,6 +6114,547 @@ address {
   border: 1px solid var(--adm-line);
 }
 
+.adm-blog-cms {
+  display: grid;
+  gap: 1rem;
+}
+
+.adm-blog-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.adm-blog-stat {
+  min-height: 166px;
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--adm-line);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 86% 18%, rgba(109, 93, 246, 0.16), transparent 34%),
+    color-mix(in srgb, var(--adm-card) 94%, transparent);
+  box-shadow: var(--adm-shadow);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.adm-blog-stat:hover,
+.adm-blog-list button:hover,
+.adm-blog-side-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(109, 93, 246, 0.32);
+  box-shadow: 0 24px 70px rgba(109, 93, 246, 0.16);
+}
+
+.adm-blog-stat.is-wide {
+  grid-column: span 2;
+}
+
+.adm-blog-stat > div,
+.adm-blog-search-row,
+.adm-blog-suggestions,
+.adm-blog-image-actions,
+.adm-blog-toolbar,
+.adm-blog-preview-tabs,
+.adm-blog-comments,
+.adm-blog-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.adm-blog-stat > div {
+  justify-content: space-between;
+}
+
+.adm-blog-stat span:first-child {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #6D5DF6, #9B8CFF);
+  box-shadow: 0 14px 30px rgba(109, 93, 246, 0.28);
+}
+
+.adm-blog-stat mark {
+  padding: 0.32rem 0.5rem;
+  border-radius: 999px;
+  color: #15803D;
+  background: rgba(34, 197, 94, 0.12);
+  font-size: 0.75rem;
+  font-weight: 1000;
+}
+
+.adm-blog-stat strong {
+  color: var(--adm-text);
+  font-size: clamp(1.2rem, 1.7vw, 1.85rem);
+  line-height: 1.08;
+}
+
+.adm-blog-stat p {
+  margin: 0;
+  color: var(--adm-muted);
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.adm-blog-stat svg {
+  width: 100%;
+  height: 34px;
+  color: #6D5DF6;
+}
+
+.adm-blog-stat polyline {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+}
+
+.adm-blog-command {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.adm-blog-search-row {
+  align-items: stretch;
+}
+
+.adm-blog-search {
+  position: relative;
+  min-width: 280px;
+  flex: 1;
+  color: var(--adm-muted);
+}
+
+.adm-blog-search svg {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.adm-blog-search input {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 5rem 0 3rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 18px;
+  outline: 0;
+  color: var(--adm-text);
+  background: var(--adm-card);
+  font-weight: 900;
+}
+
+.adm-blog-search span {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 10px;
+  color: var(--adm-muted);
+  background: color-mix(in srgb, var(--adm-card) 88%, var(--adm-line));
+  font-size: 0.72rem;
+  font-weight: 1000;
+  transform: translateY(-50%);
+}
+
+.adm-blog-new-wrap {
+  position: relative;
+}
+
+.adm-blog-new-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  z-index: 8;
+  width: 220px;
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.5rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 18px;
+  background: var(--adm-card);
+  box-shadow: var(--adm-shadow);
+}
+
+.adm-blog-new-menu button,
+.adm-blog-suggestions button,
+.adm-blog-image-actions button,
+.adm-blog-toolbar button,
+.adm-blog-preview-tabs button,
+.adm-blog-comments button,
+.adm-blog-ai-grid button,
+.adm-blog-publish-grid button {
+  min-height: 36px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 999px;
+  color: var(--adm-text);
+  background: var(--adm-card);
+  font-size: 0.82rem;
+  font-weight: 1000;
+}
+
+.adm-blog-new-menu button {
+  justify-content: flex-start;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.adm-blog-suggestions button,
+.adm-blog-preview-tabs button.is-active,
+.adm-blog-ai-grid button:hover,
+.adm-blog-publish-grid button:hover {
+  color: #FFFFFF;
+  border-color: #6D5DF6;
+  background: #6D5DF6;
+}
+
+.adm-blog-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.adm-blog-filter-grid label,
+.adm-blog-editor-panel label,
+.adm-blog-side-card label {
+  display: grid;
+  gap: 0.42rem;
+  color: var(--adm-muted);
+  font-size: 0.78rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.adm-blog-filter-grid input,
+.adm-blog-filter-grid select,
+.adm-blog-editor-panel input,
+.adm-blog-editor-panel textarea,
+.adm-blog-side-card input,
+.adm-blog-side-card textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 0.85rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 14px;
+  outline: 0;
+  color: var(--adm-text);
+  background: var(--adm-card);
+  font-weight: 900;
+}
+
+.adm-blog-editor-panel textarea,
+.adm-blog-side-card textarea {
+  padding: 0.8rem 0.85rem;
+  resize: vertical;
+}
+
+.adm-blog-workspace {
+  display: grid;
+  grid-template-columns: minmax(270px, 0.25fr) minmax(0, 0.48fr) minmax(320px, 0.27fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.adm-blog-workspace .adm-blog-list-card,
+.adm-blog-side {
+  position: sticky;
+  top: 92px;
+}
+
+.adm-blog-list button {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  min-height: 112px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.adm-blog-thumb {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 18px;
+  color: #6D5DF6;
+  background: rgba(109, 93, 246, 0.1);
+}
+
+.adm-blog-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.adm-blog-list i {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+  font-style: normal;
+}
+
+.adm-blog-list b {
+  color: var(--adm-muted);
+  font-size: 0.72rem;
+}
+
+.adm-blog-card-actions {
+  max-width: 86px;
+  justify-content: flex-end;
+  color: var(--adm-muted);
+  opacity: 0.66;
+}
+
+.adm-blog-list button:hover .adm-blog-card-actions,
+.adm-blog-list button.is-active .adm-blog-card-actions {
+  opacity: 1;
+}
+
+.adm-blog-editor-panel,
+.adm-blog-side,
+.adm-blog-side-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.adm-blog-cover-uploader {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px dashed rgba(109, 93, 246, 0.34);
+  border-radius: 22px;
+  background: rgba(109, 93, 246, 0.06);
+}
+
+.adm-blog-cover-uploader > div:first-child {
+  display: grid;
+  gap: 0.28rem;
+  color: var(--adm-muted);
+  line-height: 1.5;
+}
+
+.adm-blog-cover-uploader svg {
+  width: 32px;
+  height: 32px;
+  color: #6D5DF6;
+}
+
+.adm-blog-cover-uploader strong {
+  color: var(--adm-text);
+}
+
+.adm-blog-cover-uploader img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.adm-blog-toolbar {
+  padding: 0.5rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--adm-bg) 82%, var(--adm-card));
+}
+
+.adm-blog-toolbar button {
+  border-radius: 12px;
+}
+
+.adm-blog-rich-editor {
+  min-height: 360px;
+  font-family: inherit;
+  line-height: 1.75;
+}
+
+.adm-blog-score {
+  min-width: 58px;
+  min-height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 1000;
+}
+
+.adm-blog-score.green {
+  color: #15803D;
+  background: rgba(34, 197, 94, 0.14);
+}
+
+.adm-blog-score.yellow {
+  color: #B45309;
+  background: rgba(245, 158, 11, 0.14);
+}
+
+.adm-blog-score.red {
+  color: #DC2626;
+  background: rgba(239, 68, 68, 0.14);
+}
+
+.adm-blog-google-preview,
+.adm-blog-suggestions-list,
+.adm-blog-version-list,
+.adm-blog-workflow-mini {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.85rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--adm-bg) 84%, var(--adm-card));
+}
+
+.adm-blog-google-preview strong {
+  color: #1D4ED8;
+  font-size: 1rem;
+}
+
+.adm-blog-google-preview small {
+  color: #15803D;
+}
+
+.adm-blog-google-preview p {
+  margin: 0;
+  color: var(--adm-muted);
+  line-height: 1.55;
+}
+
+.adm-blog-suggestions-list span,
+.adm-blog-workflow-mini span,
+.adm-blog-version-list span {
+  padding: 0.55rem 0.65rem;
+  border-radius: 12px;
+  color: var(--adm-muted);
+  background: var(--adm-card);
+  font-weight: 900;
+}
+
+.adm-blog-workflow-mini span.is-done {
+  color: #FFFFFF;
+  background: #6D5DF6;
+}
+
+.adm-blog-publish-grid,
+.adm-blog-ai-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.adm-blog-ai {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(109, 93, 246, 0.18), transparent 34%),
+    var(--adm-card);
+}
+
+.adm-blog-ai .adm-card-head > svg {
+  width: 30px;
+  height: 30px;
+  color: #6D5DF6;
+}
+
+.adm-blog-preview-tabs button {
+  text-transform: capitalize;
+}
+
+.adm-blog-preview {
+  width: 100%;
+  min-height: 190px;
+  display: grid;
+  align-content: center;
+  gap: 0.45rem;
+  padding: 1rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 18px;
+  color: #111827;
+  background: #FFFFFF;
+}
+
+.adm-blog-preview.tablet {
+  max-width: 78%;
+  margin-inline: auto;
+}
+
+.adm-blog-preview.mobile {
+  max-width: 52%;
+  margin-inline: auto;
+}
+
+.adm-blog-preview.dark {
+  color: #F8FAFC;
+  background: #111827;
+}
+
+.adm-blog-preview strong {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.adm-blog-preview p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.adm-blog-version-list span {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.adm-blog-comments button {
+  flex: 1;
+}
+
+.adm-blog-analytics-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.45rem;
+  align-items: center;
+  padding: 0.8rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--adm-bg) 84%, var(--adm-card));
+}
+
+.adm-blog-analytics-row i {
+  grid-column: 1 / -1;
+  height: 6px;
+  border-radius: 999px;
+  background: #6D5DF6;
+}
+
+.adm-blog-fab {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 5.6rem;
+  z-index: 68;
+  display: grid;
+  justify-items: end;
+  gap: 0.45rem;
+}
+
+.adm-blog-fab button {
+  min-height: 38px;
+  padding: 0 0.85rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 999px;
+  color: var(--adm-text);
+  background: var(--adm-card);
+  box-shadow: var(--adm-shadow);
+  font-size: 0.82rem;
+  font-weight: 1000;
+}
+
 .adm-timeline {
   display: grid;
   gap: 1rem;
@@ -6159,6 +6730,748 @@ address {
   }
 }
 
+.adm-apt-shell,
+.adm-apt-main,
+.adm-apt-side {
+  display: grid;
+  gap: 1rem;
+}
+
+.adm-apt-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.adm-apt-stat-card {
+  min-height: 168px;
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--adm-line);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 86% 16%, rgba(109, 93, 246, 0.16), transparent 34%),
+    color-mix(in srgb, var(--adm-card) 94%, transparent);
+  box-shadow: var(--adm-shadow);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.adm-apt-stat-card:hover,
+.adm-apt-list > article:hover {
+  transform: translateY(-3px);
+  border-color: rgba(109, 93, 246, 0.32);
+  box-shadow: 0 24px 70px rgba(109, 93, 246, 0.16);
+}
+
+.adm-apt-stat-card > div,
+.adm-apt-card-headline,
+.adm-apt-card-meta,
+.adm-apt-actions,
+.adm-live-badge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.adm-apt-stat-card > div {
+  justify-content: space-between;
+}
+
+.adm-apt-stat-card span:first-child {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #6D5DF6, #9B8CFF);
+  box-shadow: 0 14px 30px rgba(109, 93, 246, 0.28);
+}
+
+.adm-apt-stat-card mark {
+  padding: 0.32rem 0.5rem;
+  border-radius: 999px;
+  color: #15803D;
+  background: rgba(34, 197, 94, 0.12);
+  font-size: 0.75rem;
+  font-weight: 1000;
+}
+
+.adm-apt-stat-card strong {
+  color: var(--adm-text);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1;
+}
+
+.adm-apt-stat-card p {
+  margin: 0;
+  color: var(--adm-muted);
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.adm-apt-stat-card svg {
+  width: 100%;
+  height: 34px;
+  color: #6D5DF6;
+}
+
+.adm-apt-stat-card polyline {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+}
+
+.adm-apt-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.32fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.adm-apt-search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.adm-apt-search {
+  position: relative;
+  display: block;
+  color: var(--adm-muted);
+}
+
+.adm-apt-search svg {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.adm-apt-search input {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 5rem 0 3rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 18px;
+  outline: 0;
+  color: var(--adm-text);
+  background: var(--adm-card);
+  font-weight: 900;
+}
+
+.adm-apt-search span {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 10px;
+  color: var(--adm-muted);
+  background: color-mix(in srgb, var(--adm-card) 88%, var(--adm-line));
+  font-size: 0.72rem;
+  font-weight: 1000;
+  transform: translateY(-50%);
+}
+
+.adm-apt-suggestions,
+.adm-apt-view-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.adm-apt-suggestions button,
+.adm-apt-view-row button {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0 0.8rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 999px;
+  color: var(--adm-muted);
+  background: var(--adm-card);
+  font-size: 0.82rem;
+  font-weight: 1000;
+}
+
+.adm-apt-view-row {
+  padding: 0.35rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--adm-bg) 80%, var(--adm-card));
+}
+
+.adm-apt-view-row button {
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+}
+
+.adm-apt-view-row button.is-active {
+  color: #FFFFFF;
+  background: #6D5DF6;
+  box-shadow: 0 14px 30px rgba(109, 93, 246, 0.22);
+}
+
+.adm-apt-filter-grid,
+.adm-apt-form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.adm-apt-form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.adm-apt-filter-grid label,
+.adm-apt-form-card label {
+  display: grid;
+  gap: 0.42rem;
+  color: var(--adm-muted);
+  font-size: 0.78rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.adm-apt-filter-grid select,
+.adm-apt-form-card input,
+.adm-apt-form-card select,
+.adm-apt-form-card textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 0.85rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 14px;
+  outline: 0;
+  color: var(--adm-text);
+  background: var(--adm-card);
+  font-weight: 900;
+}
+
+.adm-apt-form-card textarea {
+  min-height: 86px;
+  padding: 0.75rem 0.85rem;
+  resize: vertical;
+}
+
+.adm-apt-search input:focus,
+.adm-apt-filter-grid select:focus,
+.adm-apt-form-card input:focus,
+.adm-apt-form-card textarea:focus,
+.adm-apt-form-card select:focus {
+  border-color: rgba(109, 93, 246, 0.55);
+  box-shadow: 0 0 0 4px rgba(109, 93, 246, 0.14);
+}
+
+.adm-apt-span-2 {
+  grid-column: 1 / -1;
+}
+
+.adm-live-badge {
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  color: #15803D;
+  background: rgba(34, 197, 94, 0.12);
+  font-size: 0.78rem;
+  font-weight: 1000;
+}
+
+.adm-live-badge i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: adm-apt-pulse 1.4s ease-in-out infinite;
+}
+
+.adm-apt-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.adm-apt-list > article {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--adm-card) 96%, var(--adm-primary));
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.adm-apt-avatar,
+.adm-apt-drawer-title > span {
+  display: grid;
+  place-items: center;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #6D5DF6, #9B8CFF);
+  font-weight: 1000;
+}
+
+.adm-apt-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  font-size: 1.25rem;
+}
+
+.adm-apt-card-body {
+  min-width: 0;
+}
+
+.adm-apt-card-headline strong {
+  color: var(--adm-text);
+  font-size: 1.05rem;
+}
+
+.adm-apt-card-body p,
+.adm-apt-card-body small {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--adm-muted);
+  line-height: 1.5;
+}
+
+.adm-apt-card-meta {
+  margin-top: 0.75rem;
+}
+
+.adm-apt-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--adm-muted);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.adm-apt-card-meta svg {
+  color: #6D5DF6;
+}
+
+.adm-apt-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 1000;
+}
+
+.adm-apt-badge.pending,
+.adm-apt-badge.partial,
+.adm-apt-badge.normal {
+  color: #B45309;
+  background: rgba(245, 158, 11, 0.14);
+}
+
+.adm-apt-badge.confirmed,
+.adm-apt-badge.insurance {
+  color: #2563EB;
+  background: rgba(59, 130, 246, 0.14);
+}
+
+.adm-apt-badge.completed,
+.adm-apt-badge.paid,
+.adm-apt-badge.low {
+  color: #15803D;
+  background: rgba(34, 197, 94, 0.14);
+}
+
+.adm-apt-badge.cancelled,
+.adm-apt-badge.high {
+  color: #DC2626;
+  background: rgba(239, 68, 68, 0.14);
+}
+
+.adm-apt-actions {
+  justify-content: flex-end;
+  max-width: 330px;
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
+}
+
+.adm-apt-list > article:hover .adm-apt-actions {
+  opacity: 1;
+}
+
+.adm-apt-actions button {
+  min-height: 36px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 0.65rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 12px;
+  color: var(--adm-muted);
+  background: var(--adm-card);
+  font-size: 0.78rem;
+  font-weight: 1000;
+}
+
+.adm-apt-actions button:hover {
+  color: #FFFFFF;
+  border-color: #6D5DF6;
+  background: #6D5DF6;
+}
+
+.adm-apt-calendar,
+.adm-apt-kanban {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.adm-apt-calendar article,
+.adm-apt-kanban article {
+  min-height: 260px;
+  padding: 0.8rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--adm-bg) 82%, var(--adm-card));
+}
+
+.adm-apt-calendar article > div,
+.adm-apt-kanban header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.adm-apt-calendar button,
+.adm-apt-kanban button,
+.adm-apt-timeline-view button {
+  width: 100%;
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.8rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 14px;
+  color: var(--adm-text);
+  background: var(--adm-card);
+  text-align: left;
+}
+
+.adm-apt-calendar button,
+.adm-apt-kanban button {
+  margin-top: 0.55rem;
+  border: 0;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+
+.adm-apt-calendar button:hover,
+.adm-apt-kanban button:hover {
+  color: #FFFFFF;
+  background: #6D5DF6;
+}
+
+.adm-apt-timeline-view {
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+  padding-left: 1.4rem;
+}
+
+.adm-apt-timeline-view::before {
+  content: "";
+  position: absolute;
+  left: 0.42rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: rgba(109, 93, 246, 0.28);
+}
+
+.adm-apt-timeline-view button {
+  position: relative;
+}
+
+.adm-apt-timeline-view i {
+  position: absolute;
+  left: -1.25rem;
+  top: 1.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #6D5DF6;
+  box-shadow: 0 0 0 5px rgba(109, 93, 246, 0.16);
+}
+
+.adm-apt-today > div:last-child,
+.adm-apt-analytics {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.adm-apt-today section,
+.adm-apt-analytics > div:not(.adm-card-head),
+.adm-apt-profile-grid section,
+.adm-apt-ai-box,
+.adm-apt-workflow {
+  padding: 0.85rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--adm-bg) 82%, var(--adm-card));
+}
+
+.adm-apt-today section.is-current {
+  color: #FFFFFF;
+  border-color: #6D5DF6;
+  background: #6D5DF6;
+  box-shadow: 0 16px 38px rgba(109, 93, 246, 0.22);
+}
+
+.adm-apt-today section span,
+.adm-apt-today section small {
+  display: block;
+  margin-top: 0.18rem;
+}
+
+.adm-apt-analytics > div:not(.adm-card-head) {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.45rem;
+  align-items: center;
+  overflow: hidden;
+}
+
+.adm-apt-analytics > div:not(.adm-card-head) i {
+  grid-column: 1 / -1;
+  height: 6px;
+  border-radius: 999px;
+  background: #6D5DF6;
+}
+
+.adm-apt-empty {
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.65rem;
+  padding: 2rem;
+  border: 1px dashed rgba(109, 93, 246, 0.32);
+  border-radius: 24px;
+  color: var(--adm-muted);
+  text-align: center;
+  background: rgba(109, 93, 246, 0.06);
+}
+
+.adm-apt-empty svg {
+  width: 44px;
+  height: 44px;
+  color: #6D5DF6;
+}
+
+.adm-apt-drawer-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+}
+
+.adm-apt-drawer-shell.is-open {
+  pointer-events: auto;
+}
+
+.adm-apt-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(15, 23, 42, 0);
+  backdrop-filter: blur(0);
+  transition: background 0.25s ease, backdrop-filter 0.25s ease;
+}
+
+.adm-apt-drawer-shell.is-open .adm-apt-drawer-backdrop {
+  background: rgba(15, 23, 42, 0.34);
+  backdrop-filter: blur(8px);
+}
+
+.adm-apt-drawer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: min(680px, 100%);
+  height: 100%;
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: 1.2rem;
+  overflow-y: auto;
+  color: var(--adm-text);
+  background: var(--adm-card);
+  box-shadow: -26px 0 70px rgba(15, 23, 42, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.adm-apt-drawer-shell.is-open .adm-apt-drawer {
+  transform: translateX(0);
+}
+
+.adm-apt-drawer-title {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.adm-apt-drawer-title > span {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+}
+
+.adm-apt-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.adm-apt-profile-grid span {
+  display: block;
+  color: var(--adm-muted);
+  font-size: 0.72rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.adm-apt-profile-grid strong {
+  display: block;
+  margin-top: 0.28rem;
+}
+
+.adm-apt-ai-box {
+  display: flex;
+  gap: 0.85rem;
+  border-color: rgba(109, 93, 246, 0.24);
+  color: #6D5DF6;
+  background: rgba(109, 93, 246, 0.07);
+}
+
+.adm-apt-ai-box p {
+  margin: 0.35rem 0 0;
+  color: var(--adm-muted);
+  line-height: 1.55;
+}
+
+.adm-apt-workflow {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.adm-apt-workflow h3 {
+  margin: 0 0 0.4rem;
+}
+
+.adm-apt-workflow div {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.adm-apt-workflow span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--adm-muted);
+  background: var(--adm-card);
+  font-size: 0.78rem;
+  font-weight: 1000;
+}
+
+.adm-apt-workflow .is-done span {
+  color: #FFFFFF;
+  background: #6D5DF6;
+}
+
+.adm-apt-fab {
+  position: fixed;
+  right: 1.3rem;
+  bottom: 1.3rem;
+  z-index: 70;
+  display: grid;
+  justify-items: end;
+  gap: 0.6rem;
+}
+
+.adm-apt-fab-menu {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.adm-apt-fab-menu button {
+  min-height: 42px;
+  padding: 0 0.9rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 14px;
+  color: var(--adm-text);
+  background: var(--adm-card);
+  box-shadow: var(--adm-shadow);
+  font-weight: 1000;
+}
+
+.adm-apt-fab-button {
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 22px;
+  color: #FFFFFF;
+  background: #6D5DF6;
+  box-shadow: 0 22px 48px rgba(109, 93, 246, 0.34);
+}
+
+.adm-apt-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.2rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: min(460px, calc(100vw - 2rem));
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--adm-line);
+  border-radius: 16px;
+  color: var(--adm-text);
+  background: var(--adm-card);
+  box-shadow: var(--adm-shadow);
+  transform: translateX(-50%);
+  font-weight: 900;
+}
+
+@keyframes adm-apt-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(1.35);
+  }
+}
+
 @media (max-width: 1180px) {
   .adm-root {
     grid-template-columns: 1fr;
@@ -6225,6 +7538,45 @@ address {
 
   .adm-blog-list-card {
     position: static;
+  }
+
+  .adm-blog-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .adm-blog-workspace {
+    grid-template-columns: minmax(260px, 0.38fr) minmax(0, 0.62fr);
+  }
+
+  .adm-blog-side {
+    grid-column: 1 / -1;
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .adm-blog-workspace .adm-blog-list-card {
+    position: static;
+  }
+
+  .adm-apt-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .adm-apt-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .adm-apt-side {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .adm-apt-analytics {
+    grid-column: 1 / -1;
+  }
+
+  .adm-apt-calendar,
+  .adm-apt-kanban {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -6293,8 +7645,89 @@ address {
     grid-template-columns: 1fr;
   }
 
+  .adm-blog-stat-grid,
+  .adm-blog-workspace,
+  .adm-blog-side,
+  .adm-blog-filter-grid,
+  .adm-blog-list button,
+  .adm-blog-publish-grid,
+  .adm-blog-ai-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .adm-blog-stat.is-wide {
+    grid-column: auto;
+  }
+
+  .adm-blog-search-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .adm-blog-search {
+    min-width: 0;
+  }
+
+  .adm-blog-search input {
+    padding-right: 1rem;
+  }
+
+  .adm-blog-search span {
+    display: none;
+  }
+
+  .adm-blog-card-actions {
+    max-width: none;
+    justify-content: flex-start;
+    opacity: 1;
+  }
+
+  .adm-blog-preview.tablet,
+  .adm-blog-preview.mobile {
+    max-width: 100%;
+  }
+
+  .adm-blog-fab {
+    display: none;
+  }
+
   .adm-status-badge {
     justify-self: start;
+  }
+
+  .adm-apt-stat-grid,
+  .adm-apt-calendar,
+  .adm-apt-kanban,
+  .adm-apt-list > article,
+  .adm-apt-search-row,
+  .adm-apt-filter-grid,
+  .adm-apt-form-grid,
+  .adm-apt-profile-grid,
+  .adm-apt-side {
+    grid-template-columns: 1fr;
+  }
+
+  .adm-apt-actions {
+    justify-content: flex-start;
+    max-width: none;
+    opacity: 1;
+  }
+
+  .adm-apt-search input {
+    padding-right: 1rem;
+  }
+
+  .adm-apt-search span {
+    display: none;
+  }
+
+  .adm-apt-drawer {
+    padding: 0.85rem;
+  }
+
+  .adm-apt-fab {
+    right: 0.85rem;
+    bottom: 0.85rem;
   }
 }
 

@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getSiteContent, getWhatsappUrl } from "@/lib/content";
+import { HomepageTestimonialsCarousel } from "@/components/home/HomepageTestimonialsCarousel";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const content = await getSiteContent();
-  const featuredReview = content.reviews[0];
   const servicesSection = content.servicesSection || {
     kicker: "Our Services",
     title: "Everything your smile needs, explained simply.",
@@ -88,17 +88,7 @@ export default async function HomePage() {
           <span>HG</span>
           <span>+</span>
         </div>
-        <article className="clinic-testimonial-card">
-          <p className="clinic-kicker">Testimonials</p>
-          <h2 id="reviews-title">Patients feel heard before treatment begins.</h2>
-          <blockquote>{featuredReview?.quote || "The appointment felt calm, clear, and reassuring."}</blockquote>
-          <cite>{featuredReview?.name || "Healthy Grins patient"}</cite>
-          <div className="clinic-dots" aria-hidden="true">
-            <span className="is-active" />
-            <span />
-            <span />
-          </div>
-        </article>
+        <HomepageTestimonialsCarousel reviews={content.reviews} />
       </section>
 
       <section className="clinic-map" id="contact" aria-labelledby="map-title">

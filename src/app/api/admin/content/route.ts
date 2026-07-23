@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { isValidAdminToken } from "@/lib/admin";
 import { getSiteContent, saveSiteContent } from "@/lib/content";
 
@@ -23,5 +24,8 @@ export async function PUT(request: Request) {
   }
 
   const saved = await saveSiteContent(content);
+  ["/", "/about", "/booking", "/contact", "/faq", "/reviews", "/treatments"].forEach((path) => {
+    revalidatePath(path);
+  });
   return NextResponse.json(saved);
 }

@@ -11,13 +11,10 @@ import BookCTA from "@/components/about/BookCTA";
 // import ClinicGallery from "@/components/about/ClinicGallery";
 // import { DoctorSection } from "@/components/home/DoctorSection";
 import DoctorProfile from "@/components/home/DoctorSection";
-import { getSiteContent } from "@/lib/content";
 // import "../../../styles/about.css";
 export const dynamic = "force-dynamic";
 
 export default async function AboutPage() {
-  const content = await getSiteContent();
-
   return (
     <>
       <DoctorProfile />
