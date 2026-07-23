@@ -34,10 +34,9 @@
     "next-env.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
-<<<<<<< HEAD
+
     ".next/types/**/*.ts",
-=======
->>>>>>> a3b01ee (Update HealthyGrinz project)
+
     ".next-dev/types/**/*.ts"
   ],
   "exclude": [
