@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import type { User } from "@supabase/supabase-js";
 
 export default function ProfilePage() {
   const [loading, setLoading] = useState(true);
 
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User|null>(null)
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -89,7 +90,7 @@ export default function ProfilePage() {
 
             <div>
               <h1 className="text-3xl font-bold">{name}</h1>
-              <p>{user.email}</p>
+              <p>{user?.email}</p>
             </div>
 
           </div>
@@ -116,7 +117,7 @@ export default function ProfilePage() {
             </label>
 
             <input
-              value={user.email}
+              value={user?.email}
               readOnly
               className="mt-2 w-full rounded-xl border bg-gray-100 p-3"
             />

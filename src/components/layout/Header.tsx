@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import type { SiteContent } from "@/lib/content";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import type { User } from "@supabase/supabase-js";
 const links = [
   { href: "/", label: "Home" },
   { href: "/#services", label: "Services" },
@@ -23,7 +24,7 @@ type HeaderProps = {
 export function Header({ contact }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
   const profileRef = useRef<HTMLDivElement>(null);
