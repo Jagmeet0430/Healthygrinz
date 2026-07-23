@@ -17,14 +17,7 @@ export default async function HomePage() {
     <div className="clinic-home">
       <section className="clinic-hero" id="home" aria-labelledby="home-title">
         <div className="clinic-hero-copy">
-          <Image
-            className="clinic-hero-logo"
-            src="/images/healthy-grins-logo.svg"
-            alt="Healthy Grins"
-            width={230}
-            height={72}
-            priority
-          />
+        
           <p className="clinic-script">Crafting radiant smiles with care</p>
           <h1 id="home-title">Healthy Grins Dental Clinic</h1>
           <p>

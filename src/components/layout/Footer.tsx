@@ -23,7 +23,7 @@ export async function Footer() {
         <a href={`mailto:${content.contact.email}`}>{content.contact.email}</a>
       </div>
       <div className="footer-brand">
-        <Image src="/images/healthy-grins-logo.svg" alt="Healthy Grins" width={180} height={56} />
+        <Image src="/images/healthy-grins-logo.svg.jpeg" alt="Healthy Grins" width={180} height={56} />
         <span>Follow us for smile care tips and clinic updates.</span>
         <div className="social-links">
           <a href={getWhatsappUrl(content.contact.phoneHref)} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">

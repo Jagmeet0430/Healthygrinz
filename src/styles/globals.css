@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap");
 
 :root {
@@ -4767,16 +4770,18 @@ address {
   }
 
   .nav-links {
-    position: fixed;
-    inset: 76px 0 auto 0;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem;
-    background: rgba(250, 249, 253, 0.98);
-    border-bottom: 1px solid var(--line);
-    box-shadow: var(--shadow);
-  }
+  position: fixed;
+  inset: 76px 0 auto 0;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1rem;
+  background: rgba(250, 249, 253, 0.98);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow);
+
+  z-index: 999;
+}
 
   .nav-links.is-open {
     display: flex;

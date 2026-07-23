@@ -45,3 +45,44 @@ export async function saveContactSubmission(payload: ContactPayload) {
 
   return { saved: true };
 }
+export async function signUp(email: string, password: string) {
+  if (!supabase) {
+    throw new Error("Supabase is not configured.");
+  }
+
+  return await supabase.auth.signUp({
+    email,
+    password,
+  });
+}
+
+export async function signIn(email: string, password: string) {
+  if (!supabase) {
+    throw new Error("Supabase is not configured.");
+  }
+
+  return await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+}
+
+export async function signOut() {
+  if (!supabase) {
+    throw new Error("Supabase is not configured.");
+  }
+
+  return await supabase.auth.signOut();
+}
+
+export async function getCurrentUser() {
+  if (!supabase) {
+    return null;
+  }
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  return user;
+}
