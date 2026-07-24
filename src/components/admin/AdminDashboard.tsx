@@ -43,6 +43,7 @@ import {
   FiUploadCloud,
   FiUserCheck,
   FiUsers,
+  FiVideo,
   FiXCircle,
   FiZap,
 } from "react-icons/fi";
@@ -65,6 +66,8 @@ import {
 import type { BlogPost } from "@/lib/blogs";
 import type { SiteContent, Treatment } from "@/lib/content";
 import type { Submissions } from "@/lib/submissions";
+import { AdminPatientsSection } from "./AdminPatientsSection";
+import { AdminVideoManagementSection } from "./AdminVideoManagementSection";
 
 type NavItem = {
   id: AdminSection;
@@ -85,6 +88,7 @@ type AdminSection =
   | "records"
   | "prescription"
   | "inventory"
+  | "videos"
   | "reviews"
   | "blog"
   | "about"
@@ -180,6 +184,7 @@ const navigation: NavItem[] = [
   { id: "records", label: "Medical Records", icon: FiDatabase },
   { id: "prescription", label: "Prescription", icon: FiClipboard },
   { id: "inventory", label: "Inventory", icon: FiPackage },
+  { id: "videos", label: "Video Management", icon: FiVideo },
   { id: "reviews", label: "Reviews", icon: FiStar },
   { id: "blog", label: "Blog", icon: FiType },
   { id: "messages", label: "Messages", icon: FiMessageCircle },
@@ -277,6 +282,12 @@ const sectionCopy: Record<AdminSection, SectionCopy> = {
     description: "Track dental materials, stock alerts, suppliers, and reorder status.",
     cta: "Add item",
   },
+  videos: {
+    eyebrow: "Doctor video OS",
+    title: "Video Management",
+    description: "Upload doctor videos, run AI processing, moderate comments, schedule posts, and publish to social platforms.",
+    cta: "Upload video",
+  },
   reviews: {
     eyebrow: "Reputation",
     title: "Reviews",
@@ -303,7 +314,12 @@ const sectionCopy: Record<AdminSection, SectionCopy> = {
   },
 };
 
-const initialRecords: Record<Exclude<AdminSection, "dashboard" | "treatments" | "about" | "gallery" | "faqs" | "reports" | "ai" | "xray" | "blog" | "settings">, AdminRecord[]> = {
+type RecordBackedAdminSection = Exclude<
+  AdminSection,
+  "dashboard" | "treatments" | "about" | "gallery" | "faqs" | "reports" | "ai" | "xray" | "blog" | "settings" | "videos"
+>;
+
+const initialRecords: Record<RecordBackedAdminSection, AdminRecord[]> = {
   appointments: [
     { id: "APT-1048", title: "Aarav Mehta", subtitle: "Root Canal with Dr. Lisha", meta: "Today, 10:30 AM", status: "Scheduled", tone: "indigo" },
     { id: "APT-1047", title: "Neha Sharma", subtitle: "Cleaning & Polishing", meta: "Today, 11:45 AM", status: "Completed", tone: "green" },
@@ -1010,7 +1026,7 @@ function GenericSection({
   onAdvance,
   onDelete,
 }: {
-  section: Exclude<AdminSection, "dashboard" | "treatments" | "about" | "gallery" | "faqs" | "reports" | "ai" | "xray" | "blog" | "settings">;
+  section: RecordBackedAdminSection;
   records: AdminRecord[];
   search: string;
   onAdd: (record: AdminRecord) => void;
@@ -3344,6 +3360,7 @@ export function AdminDashboard() {
   const [lastUpdated, setLastUpdated] = useState(new Date());
   const [activeSection, setActiveSection] = useState<AdminSection>("dashboard");
   const [search, setSearch] = useState("");
+  const [patientCreateSignal, setPatientCreateSignal] = useState(0);
   const [records, setRecords] = useState(initialRecords);
 
   const loadDashboard = useCallback(
@@ -3474,7 +3491,7 @@ export function AdminDashboard() {
     return [...submittedRecords, ...records.appointments];
   }, [records.appointments, submissions.appointments]);
 
-  function addRecord(section: Exclude<AdminSection, "dashboard" | "treatments" | "about" | "gallery" | "faqs" | "reports" | "ai" | "xray" | "blog" | "settings">, record: AdminRecord) {
+  function addRecord(section: RecordBackedAdminSection, record: AdminRecord) {
     setRecords((current) => ({
       ...current,
       [section]: [record, ...current[section]],
@@ -3482,7 +3499,7 @@ export function AdminDashboard() {
     setLastUpdated(new Date());
   }
 
-  function advanceRecord(section: Exclude<AdminSection, "dashboard" | "treatments" | "about" | "gallery" | "faqs" | "reports" | "ai" | "xray" | "blog" | "settings">, id: string) {
+  function advanceRecord(section: RecordBackedAdminSection, id: string) {
     setRecords((current) => ({
       ...current,
       [section]: current[section].map((record) =>
@@ -3492,7 +3509,7 @@ export function AdminDashboard() {
     setLastUpdated(new Date());
   }
 
-  function deleteRecord(section: Exclude<AdminSection, "dashboard" | "treatments" | "about" | "gallery" | "faqs" | "reports" | "ai" | "xray" | "blog" | "settings">, id: string) {
+  function deleteRecord(section: RecordBackedAdminSection, id: string) {
     setRecords((current) => ({
       ...current,
       [section]: current[section].filter((record) => record.id !== id),
@@ -3503,6 +3520,12 @@ export function AdminDashboard() {
   function handlePrimaryAction() {
     if (activeSection === "dashboard") {
       setActiveSection("appointments");
+      return;
+    }
+
+    if (activeSection === "patients") {
+      setPatientCreateSignal((value) => value + 1);
+      setLastUpdated(new Date());
       return;
     }
 
@@ -3522,6 +3545,12 @@ export function AdminDashboard() {
 
     if (activeSection === "reports" || activeSection === "ai" || activeSection === "xray") {
       setStatus(`${sectionCopy[activeSection].cta} is ready in this workspace.`);
+      setLastUpdated(new Date());
+      return;
+    }
+
+    if (activeSection === "videos") {
+      setStatus("Upload video is ready in the Video Management workspace.");
       setLastUpdated(new Date());
       return;
     }
@@ -3551,6 +3580,14 @@ export function AdminDashboard() {
           onDelete={(id) => deleteRecord("appointments", id)}
         />
       );
+    }
+
+    if (activeSection === "patients") {
+      return <AdminPatientsSection globalSearch={search} openCreateSignal={patientCreateSignal} />;
+    }
+
+    if (activeSection === "videos") {
+      return <AdminVideoManagementSection globalSearch={search} />;
     }
 
     if (activeSection === "reports") {

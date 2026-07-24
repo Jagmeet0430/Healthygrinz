@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileBottomBar } from "@/components/layout/MobileBottomBar";
 import { AIWidget } from "@/components/ai/AIWidget";
+import { SplashScreen } from "@/components/layout/SplashScreen";
 import { getSiteContent } from "@/lib/content";
 import "@/styles/globals.css";
 import "@/styles/about.css";
@@ -16,6 +17,8 @@ export default async function CustomerLayout({
 
   return (
     <>
+      <SplashScreen />
+
       <a className="skip-link" href="#main">
         Skip to content
       </a>
